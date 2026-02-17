@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="com.pms.tests.AllTests">
+        <methods>
+          <include name="test04_SuccessfulRegistration"/>
+          <include name="test05_LoginPageLoads"/>
+          <include name="test13_DashboardURLIsCorrect"/>
+          <include name="test17_CreateNewProjectSuccessfully"/>
+          <include name="test15_CreateProjectButtonExists"/>
+          <include name="test14_ProjectsPageLoads"/>
+          <include name="test12_DashboardHasProjectsSection"/>
+          <include name="test06_LoginFormFieldsExist"/>
+          <include name="closeBrowser"/>
+          <include name="test19_CreateTask"/>
+          <include name="test20_NavigateToAnalytics"/>
+          <include name="test10_DashboardPageLoads"/>
+          <include name="test11_DashboardHasStatisticsCards"/>
+          <include name="test02_RegistrationFormFieldsExist"/>
+          <include name="setupBrowser"/>
+          <include name="test16_CreateProjectDialogOpens"/>
+          <include name="test01_RegistrationPageLoads"/>
+          <include name="test09_SuccessfulLogin"/>
+          <include name="test18_NavigateToTasks"/>
+        </methods>
+      </class> <!-- com.pms.tests.AllTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
