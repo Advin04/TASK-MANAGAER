@@ -60,7 +60,6 @@ const loginUser = async (req, res) => {
         .json({ success: false, message: "Please enter a valid email address" });
     }
     const user = await User.findOne({ email });
-    const user = await User.findOne({ email });
 
     if (user) {
       const isMatch = await user.matchPassword(password);
