@@ -18,7 +18,7 @@ const Sidebar = ({ menuItems }) => {
   };
 
   const sidebarClassNames = `fixed flex flex-col h-full justify-between shadow-2xl
-    transition-all duration-300 z-40 dark:bg-dark-secondary bg-white/80 backdrop-blur-md border-r border-gray-200 dark:border-gray-800
+    transition-all duration-300 z-40 dark:bg-dark-bg bg-white border-r border-gray-200 dark:border-gray-900
     ${isSidebarCollapsed ? "w-0 -translate-x-full opacity-0" : "w-72 translate-x-0 opacity-100"}
   `;
 
@@ -26,7 +26,7 @@ const Sidebar = ({ menuItems }) => {
     <div className={sidebarClassNames}>
       <div className="flex h-full w-full flex-col justify-start">
         {/* TOP LOGO */}
-        <div className="z-50 flex items-center justify-between px-6 py-6 border-b border-gray-100 dark:border-gray-800">
+        <div className="z-50 flex items-center justify-between px-6 py-6 border-b border-gray-100 dark:border-gray-900">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary-500/30">
               TB
@@ -62,10 +62,10 @@ const Sidebar = ({ menuItems }) => {
         </nav>
 
         {/* USER PROFILE BOTTOM */}
-        <div className="p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+        <div className="p-4 border-t border-gray-100 dark:border-gray-900 bg-gray-50/50 dark:bg-dark-bg">
           <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-all cursor-pointer group shadow-sm hover:shadow-md border border-transparent hover:border-gray-200 dark:hover:border-gray-700">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-400 to-violet-500 p-[2px]">
-              <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 p-[2px]">
+              <div className="w-full h-full rounded-full bg-white dark:bg-dark-bg p-[2px]">
                 <User className="w-full h-full text-gray-500 p-1" />
               </div>
             </div>
@@ -109,8 +109,8 @@ const SidebarLink = ({ icon, text, to }) => {
       )}
       <div
         className={`relative flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${isActive
-            ? "text-primary-600 dark:text-primary-400 font-medium"
-            : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+          ? "text-primary-600 dark:text-primary-400 font-medium"
+          : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100/50 dark:hover:bg-dark-secondary"
           }`}
       >
         <span className={`transition-colors duration-200 ${isActive ? "text-primary-600 dark:text-primary-400" : "text-gray-400 group-hover:text-gray-600"}`}>

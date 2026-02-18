@@ -13,6 +13,7 @@ import { getAllProjects } from '../../redux/Slices/user/projectSlice';
 import { toast } from 'react-toastify';
 import { createTask, addComment, deleteTask, getAllTasks } from '../../redux/Slices/user/taskSlice';
 import { Search } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const Tasks = () => {
     const dispatch = useDispatch();
@@ -143,64 +144,71 @@ export const Tasks = () => {
 
     return (
         <>
-            <div
-                className={`absolute top-[90px] ${isSidebarCollapsed ? 'left-6' : 'left-72'} w-76`}
-            >
-                <div className="flex gap-3">
-                    <Select variant="outlined" label={isProjectSelected ? "Chnage Project" : "Select Project"} onChange={handleProjectSelection}>
-                        {projectsList.map((project) => (
-                            <Option key={project._id} value={project._id}>
-                                {project.name}
-                            </Option>
-                        ))}
-                    </Select>
-                    <Select variant="outlined" label="Select Priority" onChange={handlePriorityChange}>
-                        <Option value="">
-                            All
-                        </Option>
-                        <Option value="High">
-                            High
-                        </Option>
-                        <Option value="Medium">
-                            Medium
-                        </Option>
-                        <Option value="Low">
-                            Low
-                        </Option>
-                    </Select>
-                    <div className="relative flex w-full max-w-[24rem]">
-                        <Input
-                            type="email"
-                            label="Search"
-                            value={searchText}
-                            onChange={onSearchChange}
-                            className="pr-20"
-                            containerProps={{
-                                className: "min-w-0",
-                            }}
-                        />
-                        <Button
-                            size="sm"
-                            variant='text'
-                            onClick={handleSearch}
-                            className="!absolute right-1 top-1 rounded"
-                        >
-                            <Search size={16} />
-                        </Button>
-                    </div>
-                    <input
-                        type='date'
-                        name="dueDate"
-                        color="indigo"
-                        label="Due Date"
-                        onChange={handleDateChange}
-                        className="w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none focus:outline-none disabled:bg-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder:opacity-100 focus:placeholder:opacity-100 text-sm px-3 py-2 rounded-lg border border-blue-gray-200 focus:border-2 focus:border-black dark:text-white"
-                    />
+            <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 px-6 pt-6">
+                <div className="w-full md:w-auto">
+                    <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Project Tasks</h1>
+                    <p className="text-gray-500 dark:text-gray-400">View and track your project progress</p>
                 </div>
             </div>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-white dark:bg-dark-secondary border border-gray-100 dark:border-gray-900 mb-8 p-4 rounded-xl flex flex-wrap gap-4 items-center justify-between z-50 relative mx-6"
+            >
+                <div className="flex flex-wrap gap-4 items-center w-full lg:w-auto">
+                    <div className="w-full sm:w-64">
+                        <Select
+                            label={isProjectSelected ? "Change Project" : "Select Project"}
+                            onChange={handleProjectSelection}
+                            className="text-gray-800 dark:text-white border-gray-300 dark:border-gray-700"
+                        >
+                            {projectsList.map((project) => (
+                                <Option key={project._id} value={project._id}>
+                                    {project.name}
+                                </Option>
+                            ))}
+                        </Select>
+                    </div>
+
+                    <div className="w-full sm:w-44">
+                        <Select
+                            label="Priority"
+                            onChange={handlePriorityChange}
+                            className="text-gray-800 dark:text-white border-gray-300 dark:border-gray-700"
+                        >
+                            <Option value="">All Priorities</Option>
+                            <Option value="High">High</Option>
+                            <Option value="Medium">Medium</Option>
+                            <Option value="Low">Low</Option>
+                        </Select>
+                    </div>
+
+                    <div className="w-full sm:w-48">
+                        <input
+                            type='date'
+                            name="dueDate"
+                            onChange={handleDateChange}
+                            className="w-full bg-white dark:bg-dark-tertiary text-gray-700 dark:text-white text-sm px-3 py-2.5 rounded-lg border border-gray-300 dark:border-gray-900 focus:border-primary-500 outline-none transition-all appearance-none"
+                        />
+                    </div>
+                </div>
+
+                <div className="relative w-full lg:w-72">
+                    <Input
+                        label="Search Tasks"
+                        value={searchText}
+                        onChange={onSearchChange}
+                        className="pr-12 !border-gray-300 dark:!border-gray-900 focus:!border-primary-500 dark:text-white"
+                        labelProps={{
+                            className: "before:content-none after:content-none",
+                        }}
+                        icon={<Search size={18} className="text-gray-400 absolute right-3 cursor-pointer" onClick={handleSearch} />}
+                    />
+                </div>
+            </motion.div>
 
             {isProjectSelected && (
-                <div className="pt-20 pl-6">
+                <div className="px-6 pb-8">
                     <div className={`flex gap-8`}>
                         <DragDropContext onDragEnd={onDragEnd}>
                             {columnsList.map((column, index) => (

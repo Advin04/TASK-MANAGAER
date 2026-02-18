@@ -18,7 +18,7 @@ const ActivityLog = ({ projectId }) => {
             case "Deleted":
                 return <Trash2 className="h-6 w-6 text-red-400" />
             case "Moved":
-                return <ArrowRightLeft className="h-6 w-6 text-black" />
+                return <ArrowRightLeft className="h-6 w-6 text-black dark:text-white" />
         }
     }
     const handleOpen = () => {
@@ -29,27 +29,27 @@ const ActivityLog = ({ projectId }) => {
     const dispatch = useDispatch();
     return (
         <div>
-            <Button onClick={handleOpen}>Activity Logs</Button>
-            <Dialog open={open} handler={handleOpen} className='p-4 h-3/4 overflow-auto'>
+            <Button onClick={handleOpen} color="blue">Activity Logs</Button>
+            <Dialog open={open} handler={handleOpen} className='p-4 h-3/4 overflow-auto bg-white dark:bg-dark-bg border border-transparent dark:border-gray-900'>
                 <Timeline>
-                    {activityList.map((activity,index) => (
+                    {activityList.map((activity, index) => (
                         <TimelineItem className="h-24" key={index}>
                             <TimelineConnector className="!w-[78px]" />
-                            <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-1 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
+                            <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white dark:bg-dark-secondary py-1 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5 dark:shadow-none dark:border-gray-900">
                                 <TimelineIcon className="p-3" variant="ghost">
                                     {renderSwitch(activity.action)}
                                 </TimelineIcon>
                                 <div className="flex flex-col gap-1">
 
-                                    <Typography variant="h6" color="blue-gray">
+                                    <Typography variant="h6" color="blue-gray" className="dark:text-white">
                                         {activity.details}
                                     </Typography>
 
                                     <div className='flex gap-10'>
-                                        <Typography variant="small" color="gray" className="font-normal">
+                                        <Typography variant="small" color="gray" className="font-normal dark:text-gray-400">
                                             User : {activity.userId.name}
                                         </Typography>
-                                        <Typography variant="small" color="gray" className="font-normal">
+                                        <Typography variant="small" color="gray" className="font-normal dark:text-gray-400">
                                             {new Date(activity.createdAt).toLocaleString('en-US', {
                                                 year: 'numeric',
                                                 month: '2-digit',

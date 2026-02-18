@@ -48,7 +48,7 @@ export const Dashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {[
-          { title: "Total Tasks", value: dashboardData.totalTask, icon: <ClipboardList size={24} />, color: "bg-gray-800" },
+          { title: "Total Tasks", value: dashboardData.totalTask, icon: <ClipboardList size={24} />, color: "bg-primary-700" },
           { title: "Todo Tasks", value: dashboardData.todoTask, icon: <FilePen size={24} />, color: "bg-blue-600" },
           { title: "In Progress", value: dashboardData.inProgressTask, icon: <FileCog2 size={24} />, color: "bg-yellow-600" },
           { title: "Completed", value: dashboardData.completedTask, icon: <FileCheck2 size={24} />, color: "bg-green-600" },
@@ -68,7 +68,7 @@ export const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
         <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
-          <StatisticsCard title={"Total Projects"} value={dashboardData.totalProjects} icon={<CalendarRange size={28} />} color={"bg-indigo-600"} />
+          <StatisticsCard title={"Total Projects"} value={dashboardData.totalProjects} icon={<CalendarRange size={28} />} color={"bg-primary-600"} />
           <StatisticsCard title={"Completed Projects"} value={"0"} icon={<CalendarCheck size={28} />} color={"bg-emerald-600"} />
         </motion.div>
 
@@ -97,7 +97,7 @@ export const Dashboard = () => {
                       (el) => (
                         <th
                           key={el}
-                          className="border-b border-gray-100 dark:border-gray-700 py-3 px-6 text-left"
+                          className="border-b border-gray-100 dark:border-gray-900 py-3 px-6 text-left"
                         >
                           <Typography
                             variant="small"
@@ -115,10 +115,10 @@ export const Dashboard = () => {
                     (data, key) => {
                       const className = `py-3 px-6 ${key === tableData.length - 1
                         ? ""
-                        : "border-b border-gray-50 dark:border-gray-800"
+                        : "border-b border-gray-50 dark:border-gray-900"
                         }`;
                       return (
-                        <tr key={data.name} className="hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                        <tr key={data.name} className="hover:bg-gray-50/50 dark:hover:bg-dark-secondary/50 transition-colors">
                           <td className={className}>
                             <div className="flex items-center gap-4">
                               <Typography
@@ -138,7 +138,7 @@ export const Dashboard = () => {
                                     alt={name}
                                     size="xs"
                                     variant="circular"
-                                    className={`cursor-pointer border-2 border-white dark:border-gray-800 hover:z-10 transition-all`}
+                                    className={`cursor-pointer border-2 border-white dark:border-dark-bg hover:z-10 transition-all`}
                                   />
                                 </Tooltip>
                               ))}
@@ -168,7 +168,7 @@ export const Dashboard = () => {
                                 value={data.progress}
                                 size="sm"
                                 color={data.progress === 100 ? "green" : "indigo"}
-                                className="bg-gray-100 dark:bg-gray-700"
+                                className="bg-gray-100 dark:bg-dark-tertiary"
                               />
                             </div>
                           </td>

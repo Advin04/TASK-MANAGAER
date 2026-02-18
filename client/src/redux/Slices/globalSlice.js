@@ -4,7 +4,7 @@ export const globalSlice = createSlice({
     name: "global",
     initialState: {
         isSidebarCollapsed: false,
-        isDarkMode: false,
+        isDarkMode: true,
     },
     reducers: {
         setIsSidebarCollapsed: (state, action) => {

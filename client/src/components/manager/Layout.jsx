@@ -51,7 +51,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
                 toast.info(members.message)
             }
         });
-        socket.on("chatNotification",(members)=>{
+        socket.on("chatNotification", (members) => {
             if (members.members.includes(user._id)) {
                 dispatch(getAllChats())
                 dispatch(getRecentChats())
@@ -64,7 +64,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
     }, [])
     return (
         <>
-            <div className="flex min-h-screen w-full bg-gray-50 text-gray-900">
+            <div className="flex min-h-screen w-full bg-gray-50 dark:bg-dark-bg text-gray-900 transition-colors duration-300">
 
                 <Sidebar menuItems={managerSidebarMenuItems} />
 
@@ -73,7 +73,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
                         }`}
                 >
                     <Navbar notifications={notifications} count={count} />
-                    <div className="h-full w-full dark:bg-gray-800 overflow-auto bg-gray-200">
+                    <div className="h-full w-full dark:bg-dark-bg overflow-auto bg-gray-50">
                         <Outlet />
                     </div>
                 </main>

@@ -3,15 +3,17 @@ import mongoose from "mongoose";
 import Task from "../../models/task.js";
 
 export const getTaskCountPerColumn = async (req, res) => {
-    const {projectId}=req.params;
-
-    const objectId =new mongoose.Types.ObjectId(projectId)
+  const { projectId } = req.params;
   try {
+    if (!projectId || projectId === "undefined") {
+      return res.status(400).json({ success: false, message: "Valid Project ID is required" });
+    }
+    const objectId = new mongoose.Types.ObjectId(projectId);
     const result = await Task.aggregate([
       // Step 1: Lookup the columns to get the column names
 
       {
-        $match:{projectId:objectId,isActive:true}
+        $match: { projectId: objectId, isActive: true }
       },
 
       {
@@ -61,31 +63,31 @@ export const getTaskCountPerColumn = async (req, res) => {
     ]);
 
     const high = await Task.countDocuments({
-        isActive:true,
-        projectId:objectId,
-        priority:"High"
+      isActive: true,
+      projectId: objectId,
+      priority: "High"
     })
 
     const medium = await Task.countDocuments({
-        isActive:true,
-        projectId:objectId,
-        priority:"Medium"
+      isActive: true,
+      projectId: objectId,
+      priority: "Medium"
     })
 
     const low = await Task.countDocuments({
-        isActive:true,
-        projectId:objectId,
-        priority:"Low"
+      isActive: true,
+      projectId: objectId,
+      priority: "Low"
     })
 
     // Map the result to get the "series" and "label" format
     const response = {
       series: result.map(item => item.count),
       label: result.map(item => item.columnName),
-      priority: [high,medium,low],
+      priority: [high, medium, low],
     };
 
-    res.json({success:true,data:response})
+    res.json({ success: true, data: response })
   } catch (error) {
     console.error("Error in aggregation:", error);
     return null;

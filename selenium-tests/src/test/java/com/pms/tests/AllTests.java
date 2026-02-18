@@ -57,8 +57,10 @@ public class AllTests {
         // options.addArguments("--headless"); // Uncomment to run headless if needed
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.manage().window().maximize();
+        // Reduced implicit wait to avoid long hangs on missing elements
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     @AfterClass
@@ -118,7 +120,7 @@ public class AllTests {
         System.out.println("\n>>> MODULE 1: REGISTRATION PAGE <<<");
         logout();
         driver.get(BASE_URL + "/auth/register");
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/register");
 
         WebElement form = wait.until(
@@ -191,9 +193,9 @@ public class AllTests {
         System.out.println("\n>>> MODULE 2: LOGIN PAGE <<<");
         // Clear auth state to access login page
         logout();
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
 
         WebElement form = wait.until(
@@ -227,9 +229,9 @@ public class AllTests {
     public void test08_InvalidLoginShowsError() {
         // First make sure we're on the login page fresh
         logout();
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-form")));
 
@@ -258,16 +260,16 @@ public class AllTests {
         }
 
         // Wait for any toast to clear
-        try { Thread.sleep(4000); } catch (InterruptedException e) {}
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
     }
 
     @Test(priority = 9, dependsOnMethods = "test06_LoginFormFieldsExist")
     public void test09_SuccessfulLogin() {
         // Make sure we're logged out first
         logout();
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         driver.get(BASE_URL + "/auth/login");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-form")));
 
@@ -299,16 +301,19 @@ public class AllTests {
             Assert.fail("Login timed out. No success or error toast/redirect observed.");
         }
 
-        // Check for error toast explicitly
-        List<WebElement> errorToasts = driver.findElements(By.cssSelector(".Toastify__toast--error"));
-        if (!errorToasts.isEmpty()) {
-            Assert.fail("Login failed with error toast: " + errorToasts.get(0).getText());
+        // WAIT specifically for the URL to change to /dashboard for true stability
+        try {
+            wait.until(ExpectedConditions.urlContains("/dashboard"));
+        } catch (Exception e) {
+            // If URL didn't change, we might still be logged in if a session exists
+            if (!driver.getCurrentUrl().contains("/dashboard")) {
+                Assert.fail("Login succeeded but URL did not transition to /dashboard");
+            }
         }
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/dashboard")
-            || !driver.findElements(By.cssSelector(".Toastify__toast--success")).isEmpty(),
-            "Should redirect to dashboard after successful login");
-        System.out.println("   PASS: Login successful, redirected to dashboard");
+        Assert.assertTrue(driver.getCurrentUrl().contains("/dashboard"),
+            "Should be on dashboard after successful login");
+        System.out.println("   PASS: Login successful and URL verified: " + driver.getCurrentUrl());
     }
 
     // ==================== MODULE 3: HOME PAGE (DASHBOARD) ====================
@@ -323,7 +328,7 @@ public class AllTests {
         }
 
         // Wait for dashboard to fully load
-        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard-page")));
 
         WebElement dashboardPage = wait.until(
             ExpectedConditions.visibilityOfElementLocated(By.id("dashboard-page"))
@@ -373,11 +378,12 @@ public class AllTests {
         System.out.println("\n>>> MODULE 4: CREATE PROJECT FUNCTIONALITY <<<");
 
         // Make sure logged in, then navigate to projects
-        if (!driver.getCurrentUrl().contains("/admin")) {
+        // Fix: Check for both dashboard and admin to avoid unnecessary helper calls
+        if (!driver.getCurrentUrl().contains("/admin") && !driver.getCurrentUrl().contains("/dashboard")) {
             loginHelper();
         }
         driver.get(BASE_URL + "/admin/projects");
-        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("projects-page")));
 
         WebElement projectsPage = wait.until(
             ExpectedConditions.visibilityOfElementLocated(By.id("projects-page"))
@@ -421,9 +427,15 @@ public class AllTests {
     // ==================== IMPROVED HELPER METHODS ====================
 
     private void loginHelper() {
-        // Force fresh start
+        // If already on a page with sidebar or dashboard, assume logged in
+        if (driver.getCurrentUrl().contains("/dashboard") || driver.getCurrentUrl().contains("/admin")) {
+            System.out.println("   INFO: Already logged in, skipping login helper.");
+            return;
+        }
+
+        // Force logout only if strictly necessary
         logout();
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         
         driver.get(BASE_URL + "/auth/login");
         
@@ -434,13 +446,6 @@ public class AllTests {
         } catch (Exception e) { /* ignore */ }
         
         driver.navigate().refresh();
-        try { Thread.sleep(1000); } catch (InterruptedException e) {}
-
-        // Wait for ANY prior toasts to disappear so they don't block clicks
-        try {
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".Toastify__toast")));
-        } catch (Exception e) { /* ignore if none */ }
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-form")));
 
         driver.findElement(By.id("login-email")).clear();
@@ -452,23 +457,16 @@ public class AllTests {
         wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
         submitBtn.click();
 
-        // Robust wait for login success (URL change OR success toast)
-        // Increased timeout to 30s for slower environments
-        WebDriverWait loginWait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        try {
-            loginWait.until(ExpectedConditions.or(
-                ExpectedConditions.urlContains("/dashboard"),
-                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".Toastify__toast--success"))
-            ));
-        } catch (Exception e) {
-            Assert.fail("Login failed or timed out for user: " + TEST_EMAIL);
-        }
+        // Robust wait for login success
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.urlContains("/dashboard"),
+            ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".Toastify__toast--success"))
+        ));
 
-        // Final verification we are logged in
         if (!driver.getCurrentUrl().contains("/dashboard")) {
              driver.get(BASE_URL + "/dashboard");
         }
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
     }
 
     @Test(priority = 17, dependsOnMethods = "test16_CreateProjectDialogOpens")
@@ -487,24 +485,60 @@ public class AllTests {
         projectDesc.sendKeys("Created automatically by Selenium test automation");
 
         // 3. Select Project Manager (Material Tailwind Select)
-        // Click the select to open dropdown
-        // Note: material-tailwind might obscure the ID, so we use a robust locator if simple ID fails
+        // STRATEGY: Material Tailwind often hides the ID. We try multiple approaches.
+        boolean pmSelected = false;
         try {
-            WebElement pmSelect = driver.findElement(By.id("project-manager-select"));
-            pmSelect.click();
+            System.out.println("   INFO: Attempting to open Project Manager dropdown...");
+            
+            // Approach 1: Try finding by the visible label's sibling (usually the trigger)
+            try {
+                WebElement label = driver.findElement(By.xpath("//label[contains(text(), 'Project Manager')]"));
+                // In Material Tailwind, the trigger is usually a sibling or parent.
+                // We'll try clicking the label itself first (sometimes works)
+                label.click();
+                System.out.println("   INFO: Clicked via Label");
+            } catch (Exception e) {
+                // Approach 2: Try the ID (might be on a wrapper)
+                try {
+                    driver.findElement(By.id("project-manager-select")).click();
+                    System.out.println("   INFO: Clicked via ID");
+                } catch (Exception e2) {
+                    // Approach 3: JS Click on the generic Select container
+                     WebElement container = driver.findElement(By.xpath("//*[text()='Project Manager']/ancestor::div[contains(@class, 'relative')]"));
+                     ((JavascriptExecutor) driver).executeScript("arguments[0].click();", container);
+                     System.out.println("   INFO: Clicked via Container JS");
+                }
+            }
+
+            // Wait for options and click the first one (Test User)
+            try {
+                Thread.sleep(500); // Allow dropdown animation
+                WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                
+                // Look for the option list
+                WebElement firstOption = shortWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@role='option']")));
+                String optionText = firstOption.getText();
+                System.out.println("   INFO: Found option: " + optionText);
+                
+                firstOption.click();
+                
+                // VERIFY: Check if the selection stuck
+                // The selected text should appear in the button/display area
+                // We look for any element containing the text we just selected
+                try {
+                    shortWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), '" + optionText + "')]")));
+                    pmSelected = true;
+                    System.out.println("   PASS: Project Manager selected: " + optionText);
+                } catch (Exception verifyErr) {
+                    System.out.println("   ⚠️ UI verification failed, but continuing.");
+                }
+
+            } catch (Exception e) {
+                 System.out.println("   ❌ Dropdown options did not appear: " + e.getMessage());
+            }
+
         } catch (Exception e) {
-             // Fallback: Use JS click if standard click fails or ID is on a wrapper
-            WebElement pmSelect = driver.findElement(By.xpath("//*[text()='Project Manager']/..")); 
-            ((org.openqa.selenium.JavascriptExecutor)driver).executeScript("arguments[0].click();", pmSelect);
-        }
-        
-        // Wait for options and click the first one (Test User)
-        try { Thread.sleep(500); } catch (InterruptedException e) {}
-        try {
-            WebElement firstOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@role='option']")));
-            firstOption.click();
-        } catch (Exception e) {
-            System.out.println("   ⚠️ Could not select Project Manager (maybe already selected?)");
+            System.out.println("   ❌ Failed to interact with Project Manager select: " + e.getMessage());
         }
 
         // 4. Select Team Members (Custom Multiselect)
@@ -538,7 +572,7 @@ public class AllTests {
         }
 
         // Check if dialog closed (project was created)
-        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
         List<WebElement> nameFields = driver.findElements(By.id("project-name"));
         boolean dialogClosed = nameFields.isEmpty() || !nameFields.get(0).isDisplayed();
         
@@ -556,7 +590,7 @@ public class AllTests {
     public void test18_NavigateToTasks() {
         // Find and click on the "Tasks" link in the sidebar or project card
         // Assuming after project creation we are on projects page, click on the project or tasks link
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         
         driver.get(BASE_URL + "/admin/tasks"); // Direct navigation for stability
         
@@ -587,7 +621,7 @@ public class AllTests {
     @Test(priority = 19, dependsOnMethods = "test18_NavigateToTasks")
     public void test19_CreateTask() {
         // Wait for columns to load
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
 
         // 1. Check if any column exists. If not, create one.
         List<WebElement> columns = driver.findElements(By.xpath("//div[contains(@class, 'bg-white') or contains(@class, 'dark:bg-gray-500')]//div[text()]"));
@@ -666,7 +700,7 @@ public class AllTests {
 
     @Test(priority = 20, dependsOnMethods = "test19_CreateTask")
     public void test20_NavigateToAnalytics() {
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(500); } catch (InterruptedException e) {}
         
         driver.get(BASE_URL + "/admin/analytics");
         

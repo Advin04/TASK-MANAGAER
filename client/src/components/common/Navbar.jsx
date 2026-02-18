@@ -23,13 +23,13 @@ const Navbar = (notifications) => {
     };
 
     return (
-        <div className="w-full flex items-center justify-between bg-white px-4 py-3 dark:bg-gray-900 outline outline-1 outline-gray-400 dark:outline-gray-700">
+        <div className="w-full flex items-center justify-between bg-white px-4 py-3 dark:bg-dark-bg border-b border-gray-200 dark:border-gray-900 transition-colors duration-300">
             {/* Search Bar */}
 
             <div className="flex items-center gap-8">
                 {!isSidebarCollapsed ? null : (
                     <button
-                        className="relative z-50 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        className="relative z-50 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-secondary transition-colors"
                         onClick={() => {
                             console.log("Toggling Sidebar. Current:", isSidebarCollapsed);
                             dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
@@ -45,7 +45,7 @@ const Navbar = (notifications) => {
                     onClick={() => dispatch(setIsDarkMode(!isDarkMode))}
                     className={
                         isDarkMode
-                            ? `rounded p-2 dark:hover:bg-gray-700`
+                            ? `rounded p-2 dark:hover:bg-dark-secondary`
                             : `rounded p-2 hover:bg-gray-100`
                     }
                 >
@@ -60,7 +60,7 @@ const Navbar = (notifications) => {
                         <button
                             className={
                                 isDarkMode
-                                    ? `h-min w-min rounded p-2 dark:hover:bg-gray-700`
+                                    ? `h-min w-min rounded p-2 dark:hover:bg-dark-secondary`
                                     : `h-min w-min rounded p-2 hover:bg-gray-100`
                             }
                         >
@@ -103,7 +103,7 @@ const Navbar = (notifications) => {
                     </PopoverContent>
                 </Popover>
 
-                <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 md:inline-block"></div>
+                <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 dark:bg-gray-800 md:inline-block"></div>
                 <div className="hidden items-center justify-between md:flex">
                     <div className="align-center flex h-9 w-9 justify-center">
                         <User className="h-6 w-6 cursor-pointer self-center rounded-full dark:text-white" />
@@ -112,10 +112,10 @@ const Navbar = (notifications) => {
                         {user?.name}
                     </span>
                     <button
-                        className="hidden rounded bg-blue-400 px-4 py-2 text-xs font-bold text-white hover:bg-blue-500 md:block"
+                        className="hidden rounded bg-primary-600 px-4 py-2 text-xs font-bold text-white hover:bg-primary-700 md:block transition-all"
                         onClick={handleSignOut}
                     >
-                        Sign out
+                        Sign Out
                     </button>
                 </div>
             </div>

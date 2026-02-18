@@ -35,9 +35,11 @@ const analyticsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAnalyticsData.fulfilled, (state, action) => {
-      state.priority = action.payload.data.priority;
-      state.columns = action.payload.data.label;
-      state.taskPerColumn = action.payload.data.series;
+      if (action.payload.success) {
+        state.priority = action.payload.data.priority;
+        state.columns = action.payload.data.label;
+        state.taskPerColumn = action.payload.data.series;
+      }
     });
   },
 });

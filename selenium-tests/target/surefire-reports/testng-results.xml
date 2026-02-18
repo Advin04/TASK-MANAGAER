@@ -2,96 +2,96 @@
 <testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-17T16:28:01 IST" name="Surefire suite" finished-at="2026-02-17T16:29:29 IST" duration-ms="88678">
+  <suite started-at="2026-02-18T08:54:43 IST" name="Surefire suite" finished-at="2026-02-18T08:55:22 IST" duration-ms="39085">
     <groups>
     </groups>
-    <test started-at="2026-02-17T16:28:01 IST" name="Surefire test" finished-at="2026-02-17T16:29:29 IST" duration-ms="88678">
+    <test started-at="2026-02-18T08:54:43 IST" name="Surefire test" finished-at="2026-02-18T08:55:22 IST" duration-ms="39085">
       <class name="com.pms.tests.AllTests">
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:01 IST" name="setupBrowser" finished-at="2026-02-17T16:28:04 IST" duration-ms="3672" status="PASS">
+        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:43 IST" name="setupBrowser" finished-at="2026-02-18T08:54:46 IST" duration-ms="3074" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method signature="test01_RegistrationPageLoads()[pri:1, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:04 IST" name="test01_RegistrationPageLoads" finished-at="2026-02-17T16:28:12 IST" duration-ms="7096" status="PASS">
+        <test-method signature="test01_RegistrationPageLoads()[pri:1, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:46 IST" name="test01_RegistrationPageLoads" finished-at="2026-02-18T08:54:50 IST" duration-ms="3326" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test01_RegistrationPageLoads -->
-        <test-method signature="test02_RegistrationFormFieldsExist()[pri:2, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:12 IST" name="test02_RegistrationFormFieldsExist" finished-at="2026-02-17T16:28:12 IST" depends-on-methods="com.pms.tests.AllTests.test01_RegistrationPageLoads" duration-ms="138" status="PASS">
+        <test-method signature="test02_RegistrationFormFieldsExist()[pri:2, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:50 IST" name="test02_RegistrationFormFieldsExist" finished-at="2026-02-18T08:54:50 IST" depends-on-methods="com.pms.tests.AllTests.test01_RegistrationPageLoads" duration-ms="100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test02_RegistrationFormFieldsExist -->
-        <test-method signature="test03_RegistrationLoginLinkExists()[pri:3, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:12 IST" name="test03_RegistrationLoginLinkExists" finished-at="2026-02-17T16:28:12 IST" depends-on-methods="com.pms.tests.AllTests.test02_RegistrationFormFieldsExist" duration-ms="33" status="PASS">
+        <test-method signature="test03_RegistrationLoginLinkExists()[pri:3, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:50 IST" name="test03_RegistrationLoginLinkExists" finished-at="2026-02-18T08:54:50 IST" depends-on-methods="com.pms.tests.AllTests.test02_RegistrationFormFieldsExist" duration-ms="27" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test03_RegistrationLoginLinkExists -->
-        <test-method signature="test04_SuccessfulRegistration()[pri:4, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:12 IST" name="test04_SuccessfulRegistration" finished-at="2026-02-17T16:28:13 IST" depends-on-methods="com.pms.tests.AllTests.test02_RegistrationFormFieldsExist" duration-ms="1474" status="PASS">
+        <test-method signature="test04_SuccessfulRegistration()[pri:4, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:50 IST" name="test04_SuccessfulRegistration" finished-at="2026-02-18T08:54:51 IST" depends-on-methods="com.pms.tests.AllTests.test02_RegistrationFormFieldsExist" duration-ms="1096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test04_SuccessfulRegistration -->
-        <test-method signature="test05_LoginPageLoads()[pri:5, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:13 IST" name="test05_LoginPageLoads" finished-at="2026-02-17T16:28:18 IST" duration-ms="4732" status="PASS">
+        <test-method signature="test05_LoginPageLoads()[pri:5, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:51 IST" name="test05_LoginPageLoads" finished-at="2026-02-18T08:54:53 IST" duration-ms="1540" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test05_LoginPageLoads -->
-        <test-method signature="test06_LoginFormFieldsExist()[pri:6, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:18 IST" name="test06_LoginFormFieldsExist" finished-at="2026-02-17T16:28:18 IST" depends-on-methods="com.pms.tests.AllTests.test05_LoginPageLoads" duration-ms="77" status="PASS">
+        <test-method signature="test06_LoginFormFieldsExist()[pri:6, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:53 IST" name="test06_LoginFormFieldsExist" finished-at="2026-02-18T08:54:53 IST" depends-on-methods="com.pms.tests.AllTests.test05_LoginPageLoads" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test06_LoginFormFieldsExist -->
-        <test-method signature="test07_LoginRegisterLinkExists()[pri:7, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:18 IST" name="test07_LoginRegisterLinkExists" finished-at="2026-02-17T16:28:18 IST" depends-on-methods="com.pms.tests.AllTests.test05_LoginPageLoads" duration-ms="32" status="PASS">
+        <test-method signature="test07_LoginRegisterLinkExists()[pri:7, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:53 IST" name="test07_LoginRegisterLinkExists" finished-at="2026-02-18T08:54:53 IST" depends-on-methods="com.pms.tests.AllTests.test05_LoginPageLoads" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test07_LoginRegisterLinkExists -->
-        <test-method signature="test08_InvalidLoginShowsError()[pri:8, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:18 IST" name="test08_InvalidLoginShowsError" finished-at="2026-02-17T16:28:27 IST" depends-on-methods="com.pms.tests.AllTests.test06_LoginFormFieldsExist" duration-ms="9435" status="PASS">
+        <test-method signature="test08_InvalidLoginShowsError()[pri:8, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:53 IST" name="test08_InvalidLoginShowsError" finished-at="2026-02-18T08:54:56 IST" depends-on-methods="com.pms.tests.AllTests.test06_LoginFormFieldsExist" duration-ms="3180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test08_InvalidLoginShowsError -->
-        <test-method signature="test09_SuccessfulLogin()[pri:9, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:27 IST" name="test09_SuccessfulLogin" finished-at="2026-02-17T16:28:54 IST" depends-on-methods="com.pms.tests.AllTests.test06_LoginFormFieldsExist" duration-ms="26263" status="PASS">
+        <test-method signature="test09_SuccessfulLogin()[pri:9, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:54:56 IST" name="test09_SuccessfulLogin" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test06_LoginFormFieldsExist" duration-ms="4760" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test09_SuccessfulLogin -->
-        <test-method signature="test10_DashboardPageLoads()[pri:10, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:54 IST" name="test10_DashboardPageLoads" finished-at="2026-02-17T16:28:57 IST" depends-on-methods="com.pms.tests.AllTests.test09_SuccessfulLogin" duration-ms="3041" status="PASS">
+        <test-method signature="test10_DashboardPageLoads()[pri:10, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test10_DashboardPageLoads" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test09_SuccessfulLogin" duration-ms="53" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test10_DashboardPageLoads -->
-        <test-method signature="test11_DashboardHasStatisticsCards()[pri:11, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:57 IST" name="test11_DashboardHasStatisticsCards" finished-at="2026-02-17T16:28:57 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="98" status="PASS">
+        <test-method signature="test11_DashboardHasStatisticsCards()[pri:11, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test11_DashboardHasStatisticsCards" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test11_DashboardHasStatisticsCards -->
-        <test-method signature="test12_DashboardHasProjectsSection()[pri:12, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:57 IST" name="test12_DashboardHasProjectsSection" finished-at="2026-02-17T16:28:57 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="24" status="PASS">
+        <test-method signature="test12_DashboardHasProjectsSection()[pri:12, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test12_DashboardHasProjectsSection" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test12_DashboardHasProjectsSection -->
-        <test-method signature="test13_DashboardURLIsCorrect()[pri:13, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:57 IST" name="test13_DashboardURLIsCorrect" finished-at="2026-02-17T16:28:57 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="8" status="PASS">
+        <test-method signature="test13_DashboardURLIsCorrect()[pri:13, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test13_DashboardURLIsCorrect" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test10_DashboardPageLoads" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test13_DashboardURLIsCorrect -->
-        <test-method signature="test14_ProjectsPageLoads()[pri:14, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:28:57 IST" name="test14_ProjectsPageLoads" finished-at="2026-02-17T16:29:00 IST" depends-on-methods="com.pms.tests.AllTests.test09_SuccessfulLogin" duration-ms="3556" status="PASS">
+        <test-method signature="test14_ProjectsPageLoads()[pri:14, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test14_ProjectsPageLoads" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test09_SuccessfulLogin" duration-ms="270" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test14_ProjectsPageLoads -->
-        <test-method signature="test15_CreateProjectButtonExists()[pri:15, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:00 IST" name="test15_CreateProjectButtonExists" finished-at="2026-02-17T16:29:00 IST" depends-on-methods="com.pms.tests.AllTests.test14_ProjectsPageLoads" duration-ms="37" status="PASS">
+        <test-method signature="test15_CreateProjectButtonExists()[pri:15, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test15_CreateProjectButtonExists" finished-at="2026-02-18T08:55:01 IST" depends-on-methods="com.pms.tests.AllTests.test14_ProjectsPageLoads" duration-ms="37" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test15_CreateProjectButtonExists -->
-        <test-method signature="test16_CreateProjectDialogOpens()[pri:16, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:00 IST" name="test16_CreateProjectDialogOpens" finished-at="2026-02-17T16:29:02 IST" depends-on-methods="com.pms.tests.AllTests.test15_CreateProjectButtonExists" duration-ms="1244" status="PASS">
+        <test-method signature="test16_CreateProjectDialogOpens()[pri:16, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:01 IST" name="test16_CreateProjectDialogOpens" finished-at="2026-02-18T08:55:02 IST" depends-on-methods="com.pms.tests.AllTests.test15_CreateProjectButtonExists" duration-ms="1186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test16_CreateProjectDialogOpens -->
-        <test-method signature="test17_CreateNewProjectSuccessfully()[pri:17, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:02 IST" name="test17_CreateNewProjectSuccessfully" finished-at="2026-02-17T16:29:18 IST" depends-on-methods="com.pms.tests.AllTests.test16_CreateProjectDialogOpens" duration-ms="16664" status="PASS">
+        <test-method signature="test17_CreateNewProjectSuccessfully()[pri:17, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:02 IST" name="test17_CreateNewProjectSuccessfully" finished-at="2026-02-18T08:55:16 IST" depends-on-methods="com.pms.tests.AllTests.test16_CreateProjectDialogOpens" duration-ms="14103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test17_CreateNewProjectSuccessfully -->
-        <test-method signature="test18_NavigateToTasks()[pri:18, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:18 IST" name="test18_NavigateToTasks" finished-at="2026-02-17T16:29:22 IST" depends-on-methods="com.pms.tests.AllTests.test17_CreateNewProjectSuccessfully" duration-ms="3500" status="PASS">
+        <test-method signature="test18_NavigateToTasks()[pri:18, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:16 IST" name="test18_NavigateToTasks" finished-at="2026-02-18T08:55:19 IST" depends-on-methods="com.pms.tests.AllTests.test17_CreateNewProjectSuccessfully" duration-ms="2171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test18_NavigateToTasks -->
-        <test-method signature="test19_CreateTask()[pri:19, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:22 IST" name="test19_CreateTask" finished-at="2026-02-17T16:29:27 IST" depends-on-methods="com.pms.tests.AllTests.test18_NavigateToTasks" duration-ms="4722" status="PASS">
+        <test-method signature="test19_CreateTask()[pri:19, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:19 IST" name="test19_CreateTask" finished-at="2026-02-18T08:55:21 IST" depends-on-methods="com.pms.tests.AllTests.test18_NavigateToTasks" duration-ms="2901" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test19_CreateTask -->
-        <test-method signature="test20_NavigateToAnalytics()[pri:20, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:27 IST" name="test20_NavigateToAnalytics" finished-at="2026-02-17T16:29:29 IST" depends-on-methods="com.pms.tests.AllTests.test19_CreateTask" duration-ms="2427" status="PASS">
+        <test-method signature="test20_NavigateToAnalytics()[pri:20, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:21 IST" name="test20_NavigateToAnalytics" finished-at="2026-02-18T08:55:22 IST" depends-on-methods="com.pms.tests.AllTests.test19_CreateTask" duration-ms="815" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test20_NavigateToAnalytics -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-17T16:29:29 IST" name="closeBrowser" finished-at="2026-02-17T16:29:29 IST" duration-ms="316" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.pms.tests.AllTests@cd3fee8]" started-at="2026-02-18T08:55:22 IST" name="closeBrowser" finished-at="2026-02-18T08:55:22 IST" duration-ms="180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

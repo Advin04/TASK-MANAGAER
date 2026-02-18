@@ -17,22 +17,22 @@ module.exports = withMT({
         white: "#ffffff",
         // Modern Indigo/Violet Palette
         primary: {
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          200: "#c7d2fe",
-          300: "#a5b4fc",
-          400: "#818cf8",
-          500: "#6366f1", // Main Brand Color
-          600: "#4f46e5",
-          700: "#4338ca",
-          800: "#3730a3",
-          900: "#312e81",
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6", // Clean Blue
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
         },
-        // Dark Mode Backgrounds
-        "dark-bg": "#0f172a", // Slate 900 - Rich dark blue/black
-        "dark-secondary": "#1e293b", // Slate 800
-        "dark-tertiary": "#334155", // Slate 700
-        "stroke-dark": "#475569", // Slate 600
+        // Dark Mode Backgrounds - Pitch Black Aesthetic
+        "dark-bg": "#000000",
+        "dark-secondary": "#0d0d0d",
+        "dark-tertiary": "#1a1a1a",
+        "stroke-dark": "#262626",
 
         // Accents
         "accent-success": "#10b981",

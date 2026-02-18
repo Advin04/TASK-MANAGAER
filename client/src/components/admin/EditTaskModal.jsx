@@ -25,16 +25,16 @@ const EditTaskModal = ({ task, editTask, membersList }) => {
             <button onClick={handleOpen}>
                 <FilePen className='h-5 w-5' />
             </button>
-            <Dialog size="sm" open={open} handler={handleOpen}>
+            <Dialog size="sm" open={open} handler={handleOpen} className="bg-white dark:bg-dark-bg border border-transparent dark:border-gray-900 overflow-hidden">
                 <DialogBody>
                     <form onSubmit={handleSubmit(onSubmit)} className="flex items-center p-4">
                         <div className="flex flex-col gap-4 min-w-[100%] m-auto">
-                            <p className="text-2xl text-gray-800 font-bold dark:text-white">
+                            <p className="text-2xl text-gray-800 font-bold dark:text-white text-center mb-2">
                                 Edit Task
                             </p>
                             <Input
                                 name="name"
-                                color="indigo"
+                                color="blue"
                                 defaultValue={task.name}
                                 label="Task Name"
                                 {...register("name", { required: "Task Name is required" })}
@@ -46,7 +46,7 @@ const EditTaskModal = ({ task, editTask, membersList }) => {
                                 {...register("description", {
                                     required: "Task Description is required",
                                 })}
-                                color="indigo"
+                                color="blue"
                                 className="dark:text-white text-gray-800"
                             />
                             <Controller
@@ -100,9 +100,9 @@ const EditTaskModal = ({ task, editTask, membersList }) => {
                                 type='date'
                                 name="dueDate"
                                 {...register("dueDate")}
-                                className="w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none focus:outline-none disabled:bg-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder:opacity-100 focus:placeholder:opacity-100 text-sm px-3 py-2.5 rounded-lg border border-gray-200 focus:border-2 focus:border-indigo-500 dark:text-white"
+                                className="w-full h-full bg-transparent text-gray-700 dark:text-gray-300 font-sans font-normal outline-none focus:outline-none disabled:bg-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder:opacity-100 focus:placeholder:opacity-100 text-sm px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-900 focus:border-2 focus:border-primary-500"
                             />
-                            <Button type="submit" color="indigo" fullWidth>
+                            <Button type="submit" color="blue" fullWidth>
                                 {"Edit Task"}
                             </Button>
                         </div>

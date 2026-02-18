@@ -2,6 +2,7 @@ import ActivityLog from "../../models/activityLog.js";
 import Column from "../../models/column.js";
 import Task from "../../models/task.js";
 import User from "../../models/user.js";
+import { categorizeTask } from "../../utils/aiService.js";
 
 const deleteTask = async (req, res) => {
   try {
@@ -60,6 +61,8 @@ const createTask = async (req, res) => {
 
   try {
     const taskCount = await Task.countDocuments({ columnId });
+    const category = categorizeTask(name, description);
+
     const task = await Task.create({
       name,
       createdBy,
@@ -70,6 +73,7 @@ const createTask = async (req, res) => {
       state,
       assignees,
       projectId,
+      category,
       order: taskCount,
       dependencies,
       attachments,

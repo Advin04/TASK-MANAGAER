@@ -205,7 +205,7 @@ export const Tasks = () => {
                 )}
             </div>
 
-            <Dialog size="sm" open={open} handler={handleOpen} className="glass-card bg-white/95 dark:bg-gray-900/95 overflow-hidden">
+            <Dialog size="sm" open={open} handler={handleOpen} className="bg-white dark:bg-dark-bg border border-transparent dark:border-gray-900 overflow-hidden">
                 <DialogBody>
                     <form onSubmit={handleSubmit(onSubmit)} className="flex items-center p-6">
                         <div className="flex flex-col gap-6 min-w-[100%] m-auto">
@@ -218,7 +218,7 @@ export const Tasks = () => {
                                 size="lg"
                                 label="Column Name"
                                 {...register('name', { required: 'Column Name is required' })}
-                                className="!border-gray-300 dark:!border-gray-600 focus:!border-primary-500"
+                                className="!border-gray-300 dark:!border-gray-900 focus:!border-primary-500 dark:text-white"
                                 labelProps={{
                                     className: "before:content-none after:content-none",
                                 }}
@@ -234,15 +234,14 @@ export const Tasks = () => {
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card mb-8 p-4 rounded-xl flex flex-wrap gap-4 items-center justify-between z-50 relative"
+                className="bg-white dark:bg-dark-secondary border border-gray-100 dark:border-gray-900 mb-8 p-4 rounded-xl flex flex-wrap gap-4 items-center justify-between z-50 relative"
             >
                 <div className="flex flex-wrap gap-4 items-center w-full lg:w-auto">
-                    <div className="w-full sm:w-60">
-                        <Select id="project-select" label="Select Project" onChange={handleProjectSelection}
-                            animate={{
-                                mount: { y: 0 },
-                                unmount: { y: 25 },
-                            }}
+                    <div className="w-full sm:w-64">
+                        <Select
+                            id="project-select"
+                            label="Select Project"
+                            onChange={handleProjectSelection}
                             className="text-gray-800 dark:text-white border-gray-300 dark:border-gray-700"
                         >
                             {projectsList.map((project) => (
@@ -253,23 +252,30 @@ export const Tasks = () => {
                         </Select>
                     </div>
 
-                    <div className="w-full sm:w-40">
-                        <Select label="Priority" onChange={handlePriorityChange}
+                    <div className="w-full sm:w-44">
+                        <Select
+                            label="Priority"
+                            onChange={handlePriorityChange}
                             className="text-gray-800 dark:text-white border-gray-300 dark:border-gray-700"
                         >
-                            <Option value="">All</Option>
+                            <Option value="">All Priorities</Option>
                             <Option value="High">High</Option>
                             <Option value="Medium">Medium</Option>
                             <Option value="Low">Low</Option>
                         </Select>
                     </div>
 
-                    <div className="w-full sm:w-40">
-                        <input
-                            type='date'
-                            onChange={handleDateChange}
-                            className="w-full bg-transparent text-gray-700 dark:text-gray-300 text-sm px-3 py-2.5 rounded-lg border border-gray-300 dark:border-gray-700 focus:border-primary-500 outline-none transition-all"
-                        />
+                    <div className="w-full sm:w-48">
+                        <div className="relative">
+                            <input
+                                type='date'
+                                onChange={handleDateChange}
+                                className="w-full bg-white dark:bg-dark-tertiary text-gray-700 dark:text-white text-sm px-3 py-2.5 rounded-lg border border-gray-300 dark:border-gray-900 focus:border-primary-500 outline-none transition-all appearance-none"
+                            />
+                            <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                {/* Date icon is usually built-in, but styling it for consistency */}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -278,7 +284,7 @@ export const Tasks = () => {
                         label="Search Tasks"
                         value={searchText}
                         onChange={onSearchChange}
-                        className="pr-12 !border-gray-300 dark:!border-gray-600 focus:!border-primary-500"
+                        className="pr-12 !border-gray-300 dark:!border-gray-900 focus:!border-primary-500 dark:text-white"
                         labelProps={{
                             className: "before:content-none after:content-none",
                         }}

@@ -8,6 +8,7 @@
           <include name="test04_SuccessfulRegistration"/>
           <include name="test05_LoginPageLoads"/>
           <include name="test13_DashboardURLIsCorrect"/>
+          <include name="test07_LoginRegisterLinkExists"/>
           <include name="test17_CreateNewProjectSuccessfully"/>
           <include name="test15_CreateProjectButtonExists"/>
           <include name="test14_ProjectsPageLoads"/>
@@ -23,6 +24,8 @@
           <include name="test16_CreateProjectDialogOpens"/>
           <include name="test01_RegistrationPageLoads"/>
           <include name="test09_SuccessfulLogin"/>
+          <include name="test03_RegistrationLoginLinkExists"/>
+          <include name="test08_InvalidLoginShowsError"/>
           <include name="test18_NavigateToTasks"/>
         </methods>
       </class> <!-- com.pms.tests.AllTests -->

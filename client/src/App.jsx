@@ -43,25 +43,25 @@ function App() {
     card: {
       defaultProps: {
         variant: "filled",
-        color: `${isDarkMode ? "gray" : "white"}`,
+        color: `${isDarkMode ? "black" : "white"}`,
         shadow: true,
-        className: "",
+        className: "border border-transparent dark:border-gray-900/50",
       },
     },
     cardHeader: {
       defaultProps: {
-        variant: `${isDarkMode ? "gray" : "white"}`,
+        variant: `${isDarkMode ? "black" : "white"}`,
         color: "white",
         shadow: true,
         floated: true,
-        className: "",
+        className: "border-b border-transparent dark:border-gray-900/50",
       },
     },
     button: {
       defaultProps: {
         variant: "filled",
         size: "md",
-        color: `${isDarkMode ? "indigo" : "indigo"}`,
+        color: `${isDarkMode ? "blue" : "indigo"}`,
         fullWidth: false,
         ripple: true,
         className: "",
@@ -102,7 +102,7 @@ function App() {
       defaultProps: {
         variant: "outlined",
         size: "md",
-        color: "indigo",
+        color: "blue",
         label: "",
         error: false,
         success: false,
@@ -116,7 +116,7 @@ function App() {
     select: {
       defaultProps: {
         variant: "outlined",
-        color: "indigo",
+        color: "blue",
         size: "md",
         label: "",
         error: false,

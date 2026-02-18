@@ -14,10 +14,27 @@ export const Analytics = () => {
     const isProjectSelected = useSelector((state) => state.adminColumns.isProjectSelected);
     const { priority, columns, taskPerColumn } = useSelector((state) => state.adminAnalytics)
 
+    // Common options for dark mode visibility
+    const commonOptions = {
+        theme: {
+            mode: 'dark'
+        },
+        chart: {
+            background: 'transparent'
+        },
+        legend: {
+            labels: {
+                colors: '#ffffff'
+            }
+        }
+    };
+
     const chartConfig = {
         series: taskPerColumn,
         options: {
+            ...commonOptions,
             chart: {
+                ...commonOptions.chart,
                 width: 380,
                 type: 'pie',
                 toolbar: {
@@ -44,7 +61,9 @@ export const Analytics = () => {
             data: priority
         }],
         options: {
+            ...commonOptions,
             chart: {
+                ...commonOptions.chart,
                 height: 350,
                 type: 'bar',
             },
@@ -58,14 +77,11 @@ export const Analytics = () => {
             dataLabels: {
                 enabled: true
             },
-            legend: {
-                show: false
-            },
             xaxis: {
                 categories: ["High", "Medium", "Low"],
                 labels: {
                     style: {
-                        colors: ["#e53935", "#fbc02d", "#43a047"],
+                        colors: ["#ffffff", "#ffffff", "#ffffff"],
                         fontSize: '12px'
                     }
                 }
@@ -74,16 +90,23 @@ export const Analytics = () => {
     }
 
 
+    const selectedProject = useSelector((state) => state.adminColumns.filters.selectedProject);
+
     const handleProjectSelection = (projectId) => {
-        dispatch(setSelectedProjectId(projectId))
-        dispatch(getAnalyticsData(projectId))
+        dispatch(setSelectedProjectId(projectId));
     };
 
-
     useEffect(() => {
-        dispatch(getAllProjects())
-        dispatch(setSelectedProjectId(projectsList[0]))
-    }, []);
+        dispatch(getAllProjects());
+    }, [dispatch]);
+
+    // Fetch analytics whenever the selected project changes
+    useEffect(() => {
+        if (selectedProject) {
+            dispatch(getAnalyticsData(selectedProject));
+        }
+    }, [selectedProject, dispatch]);
+
 
     return (
         <div id="analytics-page">
@@ -91,7 +114,7 @@ export const Analytics = () => {
             <div
                 className={`absolute top-[90px] ${isSidebarCollapsed ? 'left-6' : 'left-72'} w-76`}
             >
-                <Select variant="outlined" label={isProjectSelected ? "Chnage Project" : "Select Project"} onChange={handleProjectSelection}>
+                <Select variant="outlined" label={isProjectSelected ? "Change Project" : "Select Project"} onChange={handleProjectSelection}>
                     {projectsList.map((project) => (
                         <Option key={project._id} value={project._id}>
                             {project.name}
@@ -102,9 +125,9 @@ export const Analytics = () => {
 
             {isProjectSelected && (
                 <div className="pt-20 pl-6 flex gap-6">
-                    <Card id="chart-tasks-per-column">
+                    <Card id="chart-tasks-per-column" className="bg-white dark:bg-dark-secondary border border-gray-100 dark:border-gray-900 shadow-sm transition-all duration-300">
                         <CardBody>
-                            <Typography variant='h3'>
+                            <Typography variant='h3' className="dark:text-white">
                                 Tasks Per Column
                             </Typography>
                             <Chart
@@ -115,9 +138,9 @@ export const Analytics = () => {
                             />
                         </CardBody>
                     </Card>
-                    <Card>
+                    <Card className="bg-white dark:bg-dark-secondary border border-gray-100 dark:border-gray-900 shadow-sm transition-all duration-300">
                         <CardBody>
-                            <Typography variant='h3'>
+                            <Typography variant='h3' className="dark:text-white">
                                 Tasks Per Priority
                             </Typography>
                             <Chart options={barChartConfig.options} series={barChartConfig.series} type="bar" height={350} width={500} />

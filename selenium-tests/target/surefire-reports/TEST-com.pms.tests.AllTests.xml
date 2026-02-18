@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.pms.tests.AllTests" time="89.255" tests="20" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.pms.tests.AllTests" time="39.427" tests="20" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="webdriver.chrome.driver" value="C:\Users\ADVIN\.cache\selenium\chromedriver\win64\145.0.7632.76\chromedriver.exe"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Users\ADVIN\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\ADVIN\AppData\Local\Temp\surefire18013953425445434076\surefirebooter-20260217162752235_3.jar C:\Users\ADVIN\AppData\Local\Temp\surefire18013953425445434076 2026-02-17T16-27-51_868-jvmRun1 surefire-20260217162752235_1tmp surefire_0-20260217162752235_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ADVIN\AppData\Local\Temp\surefire8909406999640119989\surefirebooter-20260218085436626_3.jar C:\Users\ADVIN\AppData\Local\Temp\surefire8909406999640119989 2026-02-18T08-54-36_309-jvmRun1 surefire-20260218085436626_1tmp surefire_0-20260218085436626_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\ADVIN\Desktop\project-management-system-master\project-management-system-master\selenium-tests\target\test-classes;C:\Users\ADVIN\Desktop\project-management-system-master\project-management-system-master\selenium-tests\target\classes;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-java\4.18.1\selenium-java-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-api\4.18.1\selenium-api-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.18.1\selenium-chrome-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.18.1\selenium-chromium-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-json\4.18.1\selenium-json-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.18.1\selenium-manager-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.18.1\selenium-devtools-v120-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v121\4.18.1\selenium-devtools-v121-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.18.1\selenium-devtools-v122-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.18.1\selenium-devtools-v85-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.18.1\selenium-edge-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.18.1\selenium-firefox-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-http\4.18.1\selenium-http-4.18.1.jar;C:\Users\ADVIN\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.18.1\selenium-ie-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.18.1\selenium-remote-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\com\google\guava\guava\33.0.0-jre\guava-33.0.0-jre.jar;C:\Users\ADVIN\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\ADVIN\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\ADVIN\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\ADVIN\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;C:\Users\ADVIN\.m2\repository\com\google\errorprone\error_prone_annotations\2.23.0\error_prone_annotations-2.23.0.jar;C:\Users\ADVIN\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.23.1-alpha\opentelemetry-semconv-1.23.1-alpha.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-api\1.35.0\opentelemetry-api-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-context\1.35.0\opentelemetry-context-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.35.0\opentelemetry-exporter-logging-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.35.0\opentelemetry-sdk-common-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.35.0\opentelemetry-sdk-extension-autoconfigure-spi-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.35.0\opentelemetry-sdk-extension-autoconfigure-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.35.0-alpha\opentelemetry-api-events-1.35.0-alpha.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.35.0\opentelemetry-sdk-trace-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.35.0-alpha\opentelemetry-extension-incubator-1.35.0-alpha.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.35.0\opentelemetry-sdk-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.35.0\opentelemetry-sdk-metrics-1.35.0.jar;C:\Users\ADVIN\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.35.0\opentelemetry-sdk-logs-1.35.0.jar;C:\Users\ADVIN\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-os\4.18.1\selenium-os-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.18.1\selenium-safari-driver-4.18.1.jar;C:\Users\ADVIN\.m2\repository\org\seleniumhq\selenium\selenium-support\4.18.1\selenium-support-4.18.1.jar;C:\Users\ADVIN\.m2\repository\io\github\bonigarcia\webdrivermanager\5.7.0\webdrivermanager-5.7.0.jar;C:\Users\ADVIN\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\ADVIN\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\ADVIN\.m2\repository\com\github\docker-java\docker-java\3.3.5\docker-java-3.3.5.jar;C:\Users\ADVIN\.m2\repository\com\github\docker-java\docker-java-core\3.3.5\docker-java-core-3.3.5.jar;C:\Users\ADVIN\.m2\repository\com\github\docker-java\docker-java-api\3.3.5\docker-java-api-3.3.5.jar;C:\Users\ADVIN\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\ADVIN\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\ADVIN\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\ADVIN\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\ADVIN\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\ADVIN\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\ADVIN\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\ADVIN\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.5\docker-java-transport-httpclient5-3.3.5.jar;C:\Users\ADVIN\.m2\repository\com\github\docker-java\docker-java-transport\3.3.5\docker-java-transport-3.3.5.jar;C:\Users\ADVIN\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\ADVIN\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\ADVIN\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\ADVIN\.m2\repository\org\apache\commons\commons-compress\1.26.0\commons-compress-1.26.0.jar;C:\Users\ADVIN\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\ADVIN\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\ADVIN\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\ADVIN\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\ADVIN\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\ADVIN\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ADVIN\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,11 +27,12 @@
     <property name="java.home" value="C:\Users\ADVIN\Java\jdk-21"/>
     <property name="file.separator" value="\"/>
     <property name="basedir" value="C:\Users\ADVIN\Desktop\project-management-system-master\project-management-system-master\selenium-tests"/>
+    <property name="style.color" value="always"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ADVIN\AppData\Local\Temp\surefire18013953425445434076\surefirebooter-20260217162752235_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ADVIN\AppData\Local\Temp\surefire8909406999640119989\surefirebooter-20260218085436626_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.10+8-LTS-217"/>
@@ -51,7 +52,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\ADVIN\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\ADVIN\Java\jdk-21\bin;C:\Program Files\Python313\Scripts\;C:\Program Files\Python313\;c:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\BraveSoftware\Brave-Browser\Application;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Go\bin;C:\Program Files\nodejs\;C:\Users\ADVIN\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Users\ADVIN\go\bin;C:\Users\ADVIN\AppData\Roaming\npm;c:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MATLAB\R2025b\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongodb-database-tools-windows-x86_64-100.9.4\mongodb-database-tools-windows-x86_64-100.9.4\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongodb-windows-x86_64-7.0.4\mongodb-win32-x86_64-windows-7.0.4\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongosh-2.1.1-win32-x64\mongosh-2.1.1-win32-x64\bin;C:\Users\ADVIN\AppData\Local\Microsoft\WindowsApps;C:\Users\ADVIN\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Users\ADVIN\go\bin;C:\Users\ADVIN\AppData\Roaming\npm;C:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\ADVIN\AppData\Local\GitHubDesktop\bin;C:\Users\ADVIN\flutter\bin;C:\Users\ADVIN\AppData\Local\Programs\Antigravity\bin;C:\Users\ADVIN\Java\jdk-21\bin;C:\Users\ADVIN\Maven\apache-maven-3.9.6\bin;."/>
+    <property name="java.library.path" value="C:\Users\ADVIN\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/ADVIN/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin/server;C:/Users/ADVIN/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin;C:\Users\ADVIN\Java\jdk-21\bin;C:\Program Files\Python313\Scripts\;C:\Program Files\Python313\;c:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\BraveSoftware\Brave-Browser\Application;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Go\bin;C:\Program Files\nodejs\;C:\Users\ADVIN\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Users\ADVIN\go\bin;C:\Users\ADVIN\AppData\Roaming\npm;c:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MATLAB\R2025b\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongodb-database-tools-windows-x86_64-100.9.4\mongodb-database-tools-windows-x86_64-100.9.4\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongodb-windows-x86_64-7.0.4\mongodb-win32-x86_64-windows-7.0.4\bin;C:\Users\ADVIN\Desktop\my folder\softwares files\mongosh-2.1.1-win32-x64\mongosh-2.1.1-win32-x64\bin;C:\Users\ADVIN\AppData\Local\Microsoft\WindowsApps;C:\Users\ADVIN\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Users\ADVIN\go\bin;C:\Users\ADVIN\AppData\Roaming\npm;C:\Users\ADVIN\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\ADVIN\AppData\Local\GitHubDesktop\bin;C:\Users\ADVIN\flutter\bin;C:\Users\ADVIN\AppData\Local\Programs\Antigravity\bin;C:\Users\ADVIN\Java\jdk-21\bin;C:\Users\ADVIN\Maven\apache-maven-3.9.6\bin;C:\WINDOWS\System32;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -59,10 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="test01_RegistrationPageLoads" classname="com.pms.tests.AllTests" time="7.097">
+  <testcase name="test01_RegistrationPageLoads" classname="com.pms.tests.AllTests" time="3.327">
     <system-out><![CDATA[============================================
   STARTING AUTOMATED SELENIUM TESTS
-  Test Email: testuser_1771325881065@example.com
+  Test Email: testuser_1771385083786@example.com
 ============================================
 
 >>> MODULE 1: REGISTRATION PAGE <<<
@@ -71,31 +72,31 @@
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-Feb 17, 2026 4:28:04 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Feb 18, 2026 8:54:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 145
-Feb 17, 2026 4:28:04 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Feb 18, 2026 8:54:46 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 145.0.7632.76. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="test02_RegistrationFormFieldsExist" classname="com.pms.tests.AllTests" time="0.138">
+  <testcase name="test02_RegistrationFormFieldsExist" classname="com.pms.tests.AllTests" time="0.1">
     <system-out><![CDATA[   PASS: All registration form fields are present
 ]]></system-out>
   </testcase>
-  <testcase name="test03_RegistrationLoginLinkExists" classname="com.pms.tests.AllTests" time="0.036">
+  <testcase name="test03_RegistrationLoginLinkExists" classname="com.pms.tests.AllTests" time="0.028">
     <system-out><![CDATA[   PASS: Login link exists on registration page
 ]]></system-out>
   </testcase>
-  <testcase name="test04_SuccessfulRegistration" classname="com.pms.tests.AllTests" time="1.472">
-    <system-out><![CDATA[   PASS: User registered successfully: testuser_1771325881065@example.com
+  <testcase name="test04_SuccessfulRegistration" classname="com.pms.tests.AllTests" time="1.098">
+    <system-out><![CDATA[   PASS: User registered successfully: testuser_1771385083786@example.com
 ]]></system-out>
   </testcase>
-  <testcase name="test05_LoginPageLoads" classname="com.pms.tests.AllTests" time="4.733">
+  <testcase name="test05_LoginPageLoads" classname="com.pms.tests.AllTests" time="1.538">
     <system-out><![CDATA[
 >>> MODULE 2: LOGIN PAGE <<<
    PASS: Login page loaded successfully
 ]]></system-out>
   </testcase>
-  <testcase name="test06_LoginFormFieldsExist" classname="com.pms.tests.AllTests" time="0.079">
+  <testcase name="test06_LoginFormFieldsExist" classname="com.pms.tests.AllTests" time="0.067">
     <system-out><![CDATA[   PASS: All login form fields are present
 ]]></system-out>
   </testcase>
@@ -103,63 +104,71 @@ WARNING: Unable to find version of CDP to use for 145.0.7632.76. You may need to
     <system-out><![CDATA[   PASS: Register link exists on login page
 ]]></system-out>
   </testcase>
-  <testcase name="test08_InvalidLoginShowsError" classname="com.pms.tests.AllTests" time="9.435">
+  <testcase name="test08_InvalidLoginShowsError" classname="com.pms.tests.AllTests" time="3.18">
     <system-out><![CDATA[   PASS: Invalid login correctly shows error toast
 ]]></system-out>
   </testcase>
-  <testcase name="test09_SuccessfulLogin" classname="com.pms.tests.AllTests" time="26.264">
-    <system-out><![CDATA[   INFO: Attempting login with email: testuser_1771325881065@example.com
-   PASS: Login successful, redirected to dashboard
+  <testcase name="test09_SuccessfulLogin" classname="com.pms.tests.AllTests" time="4.76">
+    <system-out><![CDATA[   INFO: Attempting login with email: testuser_1771385083786@example.com
+   PASS: Login successful and URL verified: http://localhost:5173/admin/dashboard
 ]]></system-out>
   </testcase>
-  <testcase name="test10_DashboardPageLoads" classname="com.pms.tests.AllTests" time="3.042">
+  <testcase name="test10_DashboardPageLoads" classname="com.pms.tests.AllTests" time="0.055">
     <system-out><![CDATA[
 >>> MODULE 3: HOME PAGE (DASHBOARD) <<<
    PASS: Dashboard page loaded successfully
 ]]></system-out>
   </testcase>
-  <testcase name="test11_DashboardHasStatisticsCards" classname="com.pms.tests.AllTests" time="0.1">
+  <testcase name="test11_DashboardHasStatisticsCards" classname="com.pms.tests.AllTests" time="0.078">
     <system-out><![CDATA[   PASS: All statistics cards are displayed
 ]]></system-out>
   </testcase>
-  <testcase name="test12_DashboardHasProjectsSection" classname="com.pms.tests.AllTests" time="0.025">
+  <testcase name="test12_DashboardHasProjectsSection" classname="com.pms.tests.AllTests" time="0.023">
     <system-out><![CDATA[   PASS: Projects section is visible on dashboard
 ]]></system-out>
   </testcase>
-  <testcase name="test13_DashboardURLIsCorrect" classname="com.pms.tests.AllTests" time="0.007">
+  <testcase name="test13_DashboardURLIsCorrect" classname="com.pms.tests.AllTests" time="0.005">
     <system-out><![CDATA[   PASS: Dashboard URL is correct: http://localhost:5173/admin/dashboard
 ]]></system-out>
   </testcase>
-  <testcase name="test14_ProjectsPageLoads" classname="com.pms.tests.AllTests" time="3.555">
+  <testcase name="test14_ProjectsPageLoads" classname="com.pms.tests.AllTests" time="0.27">
     <system-out><![CDATA[
 >>> MODULE 4: CREATE PROJECT FUNCTIONALITY <<<
    PASS: Projects page loaded successfully
 ]]></system-out>
   </testcase>
-  <testcase name="test15_CreateProjectButtonExists" classname="com.pms.tests.AllTests" time="0.038">
+  <testcase name="test15_CreateProjectButtonExists" classname="com.pms.tests.AllTests" time="0.039">
     <system-out><![CDATA[   PASS: Create Project (+) button is visible
 ]]></system-out>
   </testcase>
-  <testcase name="test16_CreateProjectDialogOpens" classname="com.pms.tests.AllTests" time="1.244">
+  <testcase name="test16_CreateProjectDialogOpens" classname="com.pms.tests.AllTests" time="1.187">
     <system-out><![CDATA[   PASS: Create Project dialog opened with all fields
 ]]></system-out>
   </testcase>
-  <testcase name="test17_CreateNewProjectSuccessfully" classname="com.pms.tests.AllTests" time="16.663">
-    <system-out><![CDATA[   PASS: Success toast appeared!
+  <testcase name="test17_CreateNewProjectSuccessfully" classname="com.pms.tests.AllTests" time="14.101">
+    <system-out><![CDATA[   INFO: Attempting to open Project Manager dropdown...
+   INFO: Clicked via ID
+   ❌ Dropdown options did not appear: Expected condition failed: waiting for element to be clickable: By.xpath: //li[@role='option'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.76, chrome: {chromedriverVersion: 145.0.7632.76 (ee36f024f43a..., userDataDir: C:\Users\ADVIN\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62281}, goog:processID: 27664, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62281/devtoo..., se:cdpVersion: 145.0.7632.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ada68b4c21d865cefb84127d1f91c686
+   PASS: Success toast appeared!
    PASS: New project 'Selenium Test Project' created successfully!
 ]]></system-out>
   </testcase>
-  <testcase name="test18_NavigateToTasks" classname="com.pms.tests.AllTests" time="3.5">
+  <testcase name="test18_NavigateToTasks" classname="com.pms.tests.AllTests" time="2.173">
     <system-out><![CDATA[   PASS: Navigated to Tasks page
    PASS: Selected 'Selenium Test Project'
 ]]></system-out>
   </testcase>
-  <testcase name="test19_CreateTask" classname="com.pms.tests.AllTests" time="4.723">
+  <testcase name="test19_CreateTask" classname="com.pms.tests.AllTests" time="2.901">
     <system-out><![CDATA[   PASS: 'Add Task' dialog opened
    PASS: Task created successfully!
 ]]></system-out>
   </testcase>
-  <testcase name="test20_NavigateToAnalytics" classname="com.pms.tests.AllTests" time="2.428">
+  <testcase name="test20_NavigateToAnalytics" classname="com.pms.tests.AllTests" time="0.816">
     <system-out><![CDATA[   PASS: Analytics page and charts loaded!
 ]]></system-out>
   </testcase>

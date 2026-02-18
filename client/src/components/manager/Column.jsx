@@ -75,7 +75,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
 
     return (
         <div className="flex flex-col">
-            <div className="relative px-4 flex justify-between h-10 w-[340px] items-center rounded-xl bg-white font-medium text-black dark:bg-gray-900 dark:text-white">
+            <div className="relative px-4 flex justify-between h-10 w-[340px] items-center rounded-xl bg-gray-100 dark:bg-dark-secondary font-medium text-black dark:text-white border border-gray-200 dark:border-gray-900 transition-colors duration-300">
                 <div
                     className="absolute rounded-l-xl left-0 top-0 h-[100%] w-[8px]"
                     style={{ backgroundColor: `${color}` }}
@@ -84,7 +84,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                 <button onClick={handleOpen} className="text-gray-700 dark:text-white">
                     <PlusSquare />
                 </button>
-                <Dialog size="sm" open={open} handler={handleOpen}>
+                <Dialog size="sm" open={open} handler={handleOpen} className="bg-white dark:bg-dark-bg border border-transparent dark:border-gray-900 overflow-hidden">
                     <DialogBody>
                         <form onSubmit={handleSubmit(onSubmit)} className="flex items-center p-4">
                             <div className="flex flex-col gap-4 min-w-[100%] m-auto">
@@ -93,7 +93,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                 </p>
                                 <Input
                                     name="name"
-                                    color="indigo"
+                                    color="blue"
                                     label="Task Name"
                                     {...register("name", { required: "Task Name is required" })}
                                     className="dark:text-white text-gray-800"
@@ -103,7 +103,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                     {...register("description", {
                                         required: "Task Description is required",
                                     })}
-                                    color="indigo"
+                                    color="blue"
                                     className="dark:text-white text-gray-800"
                                 />
                                 <Controller
@@ -166,7 +166,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                     label="Due Date"
                                     placeholder="yyyy-mm-dd"
                                     {...register("dueDate", { required: "Due Date is required" })}
-                                    className="w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none focus:outline-none disabled:bg-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder:opacity-100 focus:placeholder:opacity-100 text-sm px-3 py-2.5 rounded-lg border border-gray-200 focus:border-2 focus:border-indigo-500 dark:text-white"
+                                    className="w-full h-full bg-transparent text-gray-700 dark:text-gray-300 font-sans font-normal outline-none focus:outline-none disabled:bg-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder:opacity-100 focus:placeholder:opacity-100 text-sm px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-900 focus:border-2 focus:border-primary-500"
                                 />
                                 <input
                                     className="block w-full text-sm text-gray-800 border border-gray-300 rounded-lg cursor-pointer
@@ -182,7 +182,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                     }}
                                 />
                                 {errors.file && <p className="text-red-500 text-sm">{errors.file.message}</p>}
-                                <Button type="submit" color="indigo" fullWidth>
+                                <Button type="submit" color="blue" fullWidth>
                                     {"Create New Task"}
                                 </Button>
                             </div>
@@ -198,7 +198,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                         >
-                            {task && <Card className={`mt-2 w-[340px] ${new Date(task.dueDate) < new Date() && task.state !== 'Completed' ? 'border-red-900 border-2' : ''}`} key={task._id} value={task._id}>
+                            {task && <Card className={`mt-2 w-[340px] bg-white dark:bg-dark-bg border border-gray-100 dark:border-gray-900 ${new Date(task.dueDate) < new Date() && task.state !== 'Completed' ? 'ring-2 ring-red-900' : ''}`} key={task._id} value={task._id}>
                                 <CardBody className="p-2">
 
                                     <div className="divide-y-2">
@@ -222,7 +222,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                             </div>
                                             <div className="flex mb-1 items-center justify-between mr-6">
                                                 <div className="flex gap-3">
-                                                    <Typography variant="h6" color="blue-gray">
+                                                    <Typography variant="h6" color="blue-gray" className="dark:text-white">
                                                         {task.name}
                                                     </Typography>
                                                     <Chip variant="ghost"
@@ -234,7 +234,7 @@ const Column = ({ color, name, id, tasks, membersList, submitNewTask, handleTask
                                                 </Typography>
                                             </div>
 
-                                            <Typography>
+                                            <Typography className="dark:text-gray-400 text-sm">
                                                 {task.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, hic?
                                             </Typography>
                                         </div>

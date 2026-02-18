@@ -57,7 +57,7 @@ const taskSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "Task",
       },
-    ],    
+    ],
     comments: [
       {
         commenterId: {
@@ -86,6 +86,11 @@ const taskSchema = new Schema(
         },
       },
     ],
+    category: {
+      type: String,
+      enum: ["Bug", "Feature", "Frontend", "Backend", "UI/UX", "Documentation", "DevOps", "Uncategorized"],
+      default: "Uncategorized",
+    },
     order: {
       type: Number,
       default: true,

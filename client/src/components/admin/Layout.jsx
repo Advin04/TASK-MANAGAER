@@ -59,7 +59,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
     }, [])
     return (
         <>
-            <div className="flex min-h-screen w-full bg-gray-50 text-gray-900">
+            <div className="flex min-h-screen w-full bg-gray-50 dark:bg-dark-bg text-gray-900 transition-colors duration-300">
 
                 <Sidebar menuItems={adminSidebarMenuItems} />
 
@@ -68,7 +68,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
                         }`}
                 >
                     <Navbar notifications={notifications} />
-                    <div className="flex-1 w-full dark:bg-gray-800 overflow-auto bg-gray-200">
+                    <div className="flex-1 w-full dark:bg-dark-bg overflow-auto bg-gray-200 transition-colors duration-300">
                         <Outlet />
                     </div>
                 </main>

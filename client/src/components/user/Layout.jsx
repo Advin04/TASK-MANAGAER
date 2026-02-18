@@ -68,7 +68,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
     }, [])
     return (
         <>
-            <div className="flex min-h-screen w-full bg-gray-50 text-gray-900">
+            <div className="flex min-h-screen w-full bg-gray-50 dark:bg-dark-bg text-gray-900 transition-colors duration-300">
 
                 <Sidebar menuItems={userSidebarMenuItems} />
 
@@ -77,7 +77,7 @@ export const Layout = ({ isSidebarCollapsed }) => {
                         }`}
                 >
                     <Navbar notifications={notifications} count={count} />
-                    <div className="h-full w-full dark:bg-gray-800 overflow-auto bg-gray-200">
+                    <div className="h-full w-full dark:bg-dark-bg overflow-auto bg-gray-50">
                         <Outlet />
                     </div>
                 </main>
